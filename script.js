@@ -6,7 +6,7 @@ const page = document.querySelector('#page')
 const indexConfigOption = document.querySelector('#indexConfigOptions')
 const sideBarBtn = document.createElement('button');
 
-console.dir(sideBar)
+
 
 function lostFocus(e) {
     const svg = sideBarBtn.lastChild
@@ -33,8 +33,10 @@ function addBtn(e) {
         topBar.insertBefore(sideBarBtn, navBar);
         addEventListener('click', lostFocus);
     } else {
-        topBar.removeChild(sideBarBtn)
         sideBar.classList.remove('close')
+        if (topBar.children[0] == sideBarBtn) { topBar.removeChild(sideBarBtn) }
+        else { return }
+
     }
 
     
