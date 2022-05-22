@@ -34,11 +34,26 @@ body{
 main{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     max-width: 1730px;
     width: 100%;
     max-height: 1038px;
     height: 100%;
+}
+
+.open{
+    position: absolute;
+    border-radius: 0px 20px 20px 0px !important;
+    transform: translateX(0px);
+    z-index: 1;
+    left: 0px;
+}
+
+.close{
+    position: absolute;
+    transform: translateX(-400px);
+    z-index: 1;
+    left: 0px;
 }
 
 button{
@@ -58,6 +73,7 @@ button:hover{
     background-color: #262626;
     border-radius: 20px;
     align-items: center;
+    transition: all 0.25s;
 }
 
 .title{
@@ -119,6 +135,7 @@ button:hover{
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    padding: 10px 30px;
 }
 
 .searchUser{
@@ -144,7 +161,7 @@ button:hover{
     border-radius: 5px;
 }
 
-.search button{
+.tinyBtn{
     background-color: transparent;
     border-radius: 5px;
     height: 35px;
@@ -156,7 +173,12 @@ button:hover{
     border: solid 0px;
 }
 
-.search button:hover {
+.tinyBtn svg{
+    color: #F9E784;
+    width: 30px;
+}
+
+.tinyBtn:hover {
     background-color: #333333;
 }
 
@@ -165,13 +187,15 @@ button:hover{
     width: 200px;
     justify-content: space-between;
     align-items: center;
+    min-width: 200px;
+    margin-left: 30px;
 }
 
 .profileImage{
-border-radius: 5px;
-width: 60px;
-height: 60px;
-overflow: hidden;
+    border-radius: 5px;
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
 }
 
 .welcomeUser{
@@ -194,6 +218,22 @@ overflow: hidden;
     width: 100%;
 }
 
+.buttonsOptions{
+    display: inline-grid;
+    grid-template-columns: repeat(3, minmax(50px, 115px));
+    grid-template-rows: 40px;
+    gap:  30px;
+    margin-left: 25px;
+}
+
+.buttonsOptions button {
+    background-color: #D05353;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 20px;
+    border: solid 0px;
+}
+
 .postOptions p{
     color: #D05353;
     font-size: 16px;
@@ -205,30 +245,21 @@ overflow: hidden;
     font-weight: 600;
 }
 
-.postOptions button{
-    margin-left: 40px;
-    background-color: #D05353;
-    border-radius: 5px;
-    height: 40px;
-    width: 115px;
-    text-align: center;
-    font-size: 20px;
-    border: solid 0px;
-}
-
 .panel{
     background-color: #262626;
     width: 100%;
-    height: 805px;
+    min-height: 805px;
     border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    padding: 30px;
+    margin-top: 25px;
 }
 
 .projects{
     width: 850px;
-    margin: 25px;
+    margin-right: 25px;
     height: 750px;
     overflow-y: auto;
     scrollbar-width: none;
@@ -240,10 +271,8 @@ overflow: hidden;
 
 .allPosts{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-template-rows: repeat(3, 1fr);
-    grid-row: 1 2;
-    grid-column: 1;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    grid-template-rows: repeat(3, auto);
     gap: 22px;
    
 }
@@ -296,20 +325,18 @@ overflow: hidden;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    max-height: 728px;
-    height: 100%;
-    margin: 25px;
+    min-height: 728px;
+   
 }
 
 .announcements{
     max-width: 333px;
     width: 100%;
-    height: 290px;
+    
     
 }
 
 .announcementsContent{
-    height: 100%;
     padding: 20px;
     display: flex;
     justify-content: space-evenly;
@@ -358,4 +385,52 @@ overflow: hidden;
     background-color: #444444;
     border-radius: 5px;
     transform: scale(1.1);
+}
+
+@media (max-width:1420px) {
+    main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 1730px;
+            width: 100%;
+            max-height: 1038px;
+            height: 100%;
+        }
+}
+
+@media (max-width:950px) {
+    .trendingContent h3 {
+        font-size: 15px;
+    }
+
+    .trendingContent p {
+        font-size: 12px;
+    }
+
+
+
+}
+
+@media (max-width:610px) {
+
+    .buttonsOptions {
+        display: inline-grid;
+        grid-template-columns: repeat(2, minmax(50px, 115px));
+        grid-template-rows: repeat(2, 40px);
+        gap: 10px;
+        margin-left: 25px;
+    }
+    
+    .buttonsOptions button {
+        background-color: #D05353;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 20px;
+        border: solid 0px;
+    }
+    
+    .buttonsOptions button:first-child {
+        grid-area: 1 / 1 / 3 / 1;
+    }
 }
