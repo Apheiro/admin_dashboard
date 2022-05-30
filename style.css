@@ -79,6 +79,7 @@ main{
     padding: 39px;
     background-color: #262626;
     border-radius: 20px;
+    place-content: center;
 }
 
 .projects {
