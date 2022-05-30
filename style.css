@@ -6,7 +6,11 @@
     color: #F1E8B8;
     font-family: 'Poppins', sans-serif;
 }
-h1{color: #D05353;}
+
+:focus {
+    outline: solid #F9E784 2px;
+    outline-offset: 4px;
+}
 
 h2{
     color: #D05353;
@@ -15,7 +19,9 @@ h2{
     font-weight: 500;
 }
 
-h3 {color: #F9E784;}
+h3 {
+    color: #F9E784;
+}
 
 body{
     background-color: #191919;
@@ -24,29 +30,107 @@ body{
     justify-content: center;
     width: 100vw;
     height: 100vh;
-}
-
-:focus {
-    outline: solid #F9E784 2px;
-    outline-offset: 4px;
+    padding: 25px;
 }
 
 main{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0px, 323px) minmax(0px, 1383px);
+    grid-template-rows: minmax(0px, 203px) minmax(0px, auto);
+    gap: 25px;
     max-width: 1730px;
-    width: 100%;
     max-height: 1038px;
+    width: 100%;
     height: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.sidebar {
+    grid-row: 1/3;
+    display: flex;
+    flex-direction: column;
+    background-color: #262626;
+    border-radius: 20px;
+    align-items: center;
+    transition: all 0.25s;
+}
+
+.navbar {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    background-color: #262626;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px 30px;
+}
+
+.panel {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    display: grid;
+    gap: 30px;
+    grid-template-columns: minmax(300px, 840px) minmax(260px, 400px);
+    grid-template-rows: minmax(0px, 1fr) minmax(0px, 1fr);
+    padding: 39px;
+    background-color: #262626;
+    border-radius: 20px;
+}
+
+.projects {
+    grid-column: 1/2;
+    grid-row: 1/3;
+    height: 100%;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+.allPosts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-rows: repeat(3, auto);
+    gap: 22px;
+}
+
+.announcements {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.trending {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.announcementsContent {
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    height: 100%;
+}
+
+.trendingContent {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 100%;
+    padding: 10px 30px;
 }
 
 .open{
     position: absolute;
-    border-radius: 0px 20px 20px 0px !important;
     transform: translateX(0px);
     z-index: 1;
     left: 0px;
+    width: 350px;
+    height: 100%;
 }
 
 .close{
@@ -54,6 +138,8 @@ main{
     transform: translateX(-400px);
     z-index: 1;
     left: 0px;
+    width: 350px;
+    height: 100%;
 }
 
 button{
@@ -65,21 +151,14 @@ button:hover{
     transform: scale(1.2);
 }
 
-.sidebar{
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 323px;
-    background-color: #262626;
-    border-radius: 20px;
-    align-items: center;
-    transition: all 0.25s;
-}
-
 .title{
     margin: 35px 0px 0px;
     display: flex;
     align-items: center;
+}
+
+.title h1{
+    color: #D05353 !important;
 }
 
 .title svg {
@@ -88,8 +167,11 @@ button:hover{
 
 .index{
     width: 100%;
-    height: 100%;
+    height: 615px;
     padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .indexPersonalOptions ul{
@@ -102,10 +184,6 @@ button:hover{
     margin-right: 20px;
 }
 
-.indexConfigOptions{
-    margin-top: 100px;
-}
-
 .indexConfigOptions ul{
     display: flex;
     align-items: center;
@@ -114,28 +192,6 @@ button:hover{
 
 .indexConfigOptions ul svg {
     margin-right: 20px;
-}
-
-.page{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    max-width: 1380px;
-    width: 100%;
-    margin: 25px;
-}
-
-.navbar{
-    background-color: #262626;
-    width: 100%;
-    height: 204px;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 10px 30px;
 }
 
 .searchUser{
@@ -240,42 +296,10 @@ button:hover{
     font-weight: 600;
 }
 
-.postOptions h2{
-    font-size: 25px;
-    font-weight: 600;
-}
-
-.panel{
-    background-color: #262626;
-    width: 100%;
-    min-height: 805px;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    padding: 30px;
-    margin-top: 25px;
-}
-
-.projects{
-    width: 850px;
-    margin-right: 25px;
-    height: 750px;
-    overflow-y: auto;
-    scrollbar-width: none;
-}
-
 .projects::-webkit-scrollbar {
     display: none;
 }
 
-.allPosts{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-    grid-template-rows: repeat(3, auto);
-    gap: 22px;
-   
-}
 .post, .trendingContent, .announcementsContent {
     background-color: #2E2E2E;
     border-radius: 11px;
@@ -287,12 +311,12 @@ button:hover{
     flex-direction: column;
     justify-content: space-between;
     border-left: #E58F65 13px solid;
-    transition: transform 0.25s;
-   
+    transition: border-left 0.25s, filter 0.25s;
 }
 
 .post:hover {
-    transform: scale(1.01);
+    border-left: #E58F65 7px solid;
+    filter: brightness(1.2);
 }
 
 .text-content h3{
@@ -320,48 +344,12 @@ button:hover{
     transform: scale(1.2);
 }
 
-.announcementsTrending{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    min-height: 728px;
-   
-}
-
-.announcements{
-    max-width: 333px;
-    width: 100%;
-    
-    
-}
-
-.announcementsContent{
-    padding: 20px;
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: column;
-}
-
 .announcementsContent h3{
     font-size: 15px;
 }
 
 .announcementsContent p{
-    font-size: 10px;
-}
-
-.trending{
-    max-width: 333px;
-    width: 100%;
-}
-
-.trendingContent{
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    height: 340px ;
-    padding: 10px 30px;
+    font-size: 12px;
 }
 
 .trendingContent h3{
@@ -375,6 +363,7 @@ button:hover{
     object-fit:cover;
     margin-right: 15px;
 }
+
 .trendingOption{
     display: flex;
     align-items: center;
@@ -389,31 +378,76 @@ button:hover{
 
 @media (max-width:1420px) {
     main {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            max-width: 1730px;
-            width: 100%;
-            max-height: 1038px;
-            height: 100%;
+            grid-template-columns: 0px minmax(0px, 1383px);
+            column-gap: 0px;
         }
 }
 
 @media (max-width:950px) {
-    .trendingContent h3 {
+    .user img{
+        display: none;
+    }
+
+    .user p{
+        display: none;
+    }
+
+    .user{
+        width: auto !important;
+        min-width: unset !important;
+        margin-left: 5px;
+    }
+
+    .tinyBtn{
+        margin: 0px 5px;
+        width: 37px;
+        height: 37px;
+    }
+
+    .panel {
+        grid-column: 2/3;
+        grid-row: 2/3;
+        display: grid;
+        column-gap: 0px;
+        grid-template-columns: minmax(300px, 840px) minmax(0px, 0px);
+        grid-template-rows: minmax(600px, auto) minmax(450px, auto) minmax(400px, 0px);
+        padding: 39px;
+        background-color: #262626;
+        border-radius: 20px;
+        overflow-y: auto;
+        scrollbar-width: none;
+    }
+
+    .panel::-webkit-scrollbar {
+        display: none;
+    }
+
+    .projects{
+        grid-column: 1/3;
+        grid-row: 1/2;	
+    }
+
+    .announcements{
+        grid-column: 1/3;
+        grid-row: 2/3;
+    }
+
+    .announcementsContent h3{
+        font-size: 20px;
+    }
+
+    .announcementsContent p{
         font-size: 15px;
     }
 
-    .trendingContent p {
-        font-size: 12px;
+    .trending{
+        grid-column: 1/3;
+        grid-row: 3/4;
     }
-
-
-
 }
 
 @media (max-width:610px) {
-
+    
     .buttonsOptions {
         display: inline-grid;
         grid-template-columns: repeat(2, minmax(50px, 115px));

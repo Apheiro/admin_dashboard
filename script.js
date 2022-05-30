@@ -36,14 +36,10 @@ function addBtn(e) {
         sideBar.classList.remove('close')
         if (topBar.children[0] == sideBarBtn) { topBar.removeChild(sideBarBtn) }
         else { return }
-
     }
-
-    
 }
 addBtn()
 window.addEventListener('resize', addBtn)
-
 
 function showSideBar(e) {
     sideBar.classList.remove('close')
