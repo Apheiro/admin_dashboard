@@ -156,14 +156,11 @@ button:hover{
     margin: 35px 0px 0px;
     display: flex;
     align-items: center;
+    gap: 20px;
 }
 
 .title h1{
     color: #D05353 !important;
-}
-
-.title svg {
-    margin-right: 20px;
 }
 
 .index{
@@ -181,8 +178,8 @@ button:hover{
     margin: 25px 0px;
 }
 
-.indexPersonalOptions ul svg{
-    margin-right: 20px;
+.indexPersonalOptions ul{
+    gap: 20px;
 }
 
 .indexConfigOptions ul{
@@ -191,8 +188,8 @@ button:hover{
     margin: 25px 0px;
 }
 
-.indexConfigOptions ul svg {
-    margin-right: 20px;
+.indexConfigOptions ul{
+    gap: 20px;
 }
 
 .searchUser{
@@ -311,6 +308,7 @@ button:hover{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 10px;
     border-left: #E58F65 13px solid;
     transition: border-left 0.25s, filter 0.25s;
 }
@@ -333,15 +331,14 @@ button:hover{
     display: flex;
     justify-content: end;
     align-items: center;
+    gap: 20px;
 }
 
-.options svg{
-    margin: 10px 10px 0px 10px;
-    cursor: pointer;
+.options img{
     transition: transform 0.25s;
 }
 
-.options svg:hover {
+.options img:hover {
     transform: scale(1.2);
 }
 
