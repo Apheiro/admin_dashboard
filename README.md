@@ -1,6 +1,29 @@
-# Admin dashboard
+#
 
-In this project I created an Interface for the admin to manage the posts.</br>
+<h1 align="center">Admin Dashoboard</h1>
 
-Images Preview:</br>
-![](./Preview/Screen%20Shot%202022-05-30%20at%2005.39.40.png)
+![](./Preview/thumbnail.png)
+
+<p align="center">
+  Admin Dashoboard for <a href="https://www.theodinproject.com/">The Odin Project</a>
+</p>
+
+## Demo
+
+👁️ [Live Demo](https://apheiro.github.io/admin_dashboard/)
+
+## Built with
+
+- JavaScript
+- Css
+- Html
+
+## Features
+
+- Responsive design.
+- Clean desing.
+
+## Screenshots
+
+![](./Preview/presentation.png)
+![](./Preview/Screenshot.png)
